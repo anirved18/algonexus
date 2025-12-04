@@ -11,8 +11,7 @@ const NAV_ITEMS = [
   { id: "home", label: "Home" },
   { id: "learn", label: "Learn" },
   { id: "algos", label: "Algorithms" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
+  { id: "about", label: "About" }
 ];
 
 const ALGORITHMS = [

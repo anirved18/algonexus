@@ -8,12 +8,11 @@ export default function HeroSection() {
   const router = useRouter();
 
   const handleCompareClick = () => {
-    // later you can change this to /compare or another page
-    console.log("Compare Visualizer clicked");
+    router.push("/compare"); // ✅ go to /compare page
   };
 
   const handleLearnMoreClick = () => {
-    router.push("/learn"); // ✅ goes to your Learn page
+    router.push("/learn"); // your Learn page
   };
 
   return (
