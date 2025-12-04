@@ -20,7 +20,173 @@
 }
 
 body {
-  background: var(--background);
+  background: #050816; /* override background to your dark color */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fade-in-up animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.fade-in-up.delay-100 {
+  animation-delay: 0.1s;
+}
+.fade-in-up.delay-150 {
+  animation-delay: 0.15s;
+}
+.fade-in-up.delay-200 {
+  animation-delay: 0.2s;
+}
+.fade-in-up.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* (Old) Equalizer animation – safe to keep if you use .equalizer-bar anywhere */
+@keyframes equalizerPulse {
+  0% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.3);
+  }
+}
+
+.equalizer-bar {
+  transform-origin: bottom;
+  animation: equalizerPulse 1.2s ease-in-out infinite;
+}
+
+/* New Equalizer animation for .animated-bar (used in Equalizer.jsx) */
+@keyframes barPulse {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.5);
+    opacity: 0.7;
+  }
+}
+
+.animated-bar {
+  transform-origin: bottom;
+  animation: barPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Chip pop-in animation */
+@keyframes chipPop {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chip-pop {
+  opacity: 0;
+  animation: chipPop 0.4s ease-out forwards;
+}
+
+/* Page fade-in */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageFadeIn 0.7s ease-out;
+}
+
+/* Hero title animation */
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  animation: heroTitleIn 0.8s ease-out forwards;
+}
+
+.hero-title-highlight {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hero subtitle animation */
+@keyframes heroSubtitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgb(148 163 184); /* slate-400 */
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: heroSubtitleIn 0.8s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+/* Buttons fade-in */
+@keyframes heroButtonsIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-buttons {
+  animation: heroButtonsIn 0.8s ease-out;
 }
