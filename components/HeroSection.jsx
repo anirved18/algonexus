@@ -8,15 +8,15 @@ export default function HeroSection() {
   const router = useRouter();
 
   const handleCompareClick = () => {
-    router.push("/compare"); // ✅ go to /compare page
+    router.push("/compare");
   };
 
   const handleLearnMoreClick = () => {
-    router.push("/learn"); // your Learn page
+    router.push("/learn");
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-4 pt-10 pb-16 text-center">
+    <section className="max-w-5xl mx-auto px-4 pt-4 md:pt-10 pb-32 md:pb-20 text-center">
       {/* Title */}
       <h1 className="hero-title">
         Algorithm
